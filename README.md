@@ -1,21 +1,13 @@
-# ИС
+# My Custom Component Library
 
-Сделать аккаунт на гитхабе.
-Установить:
-git
-github desktop
-vs code
-node.js 24
+[![npm version](https://badge.fury.io/js/my-custom-library.svg)](https://www.npmjs.com/package/my-custom-library)
 
----
+## Описание
 
-Склонировать себе на компьютер репозиторий https://github.com/dergunovs/is
+Это кастомная библиотека компонентов, созданная на основе библиотеки IS. 
+Библиотека включает улучшенные стили и дополнительные возможности.
 
-ввести в терминале:
-git clone https://github.com/dergunovs/is.git
+## Установка
 
-открыть появившуюся папку в vs code
-
-открыть терминал в vs code
-
-написать в терминале в vs code: npm install
+```bash
+npm install my-custom-library
