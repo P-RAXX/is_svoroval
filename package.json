@@ -1,7 +1,7 @@
 {
   "name": "p-raxx-is-components",
   "description": "This is my library, this is mine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
@@ -66,7 +66,7 @@
   },
   "author": "Your Name <derwas0085@gmail.com>",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/P-RAXX/is_svoroval.git"
+    "type": "git",
+    "url": "https://github.com/P-RAXX/is_svoroval.git"
   }
 }
