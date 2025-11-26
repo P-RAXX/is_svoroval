@@ -1,7 +1,7 @@
 {
   "name": "p-raxx-is-components",
   "description": "This is my library, this is mine",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006 --no-open",
     "build": "vite build && storybook build",
+    "build-storybook": "storybook build",
     "lint": "eslint **/*.{js,ts,vue} && stylelint src/**/*.{scss,vue}",
     "ts": "vue-tsc --noEmit"
   },
@@ -62,5 +63,10 @@
   "engines": {
     "npm": "11",
     "node": "24"
+  },
+  "author": "Your Name <derwas0085@gmail.com>",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/P-RAXX/is_svoroval.git"
   }
 }

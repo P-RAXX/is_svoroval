@@ -3,18 +3,15 @@
     :type="props.type"
     :disabled="props.isDisabled"
     :class="[
-      $style.button,
-      $style[`button--${props.layout}`],
-      { [$style.pressed]: isPressed }
+      'button',
+      `button--${props.variant}`,
+      { 'pressed': isPressed }
     ]"
     @mousedown="handlePress"
     @mouseup="handleRelease"
     @mouseleave="handleRelease"
   >
-    <span :class="$style.text">
-      <slot></slot>
-    </span>
-    <div :class="$style.border"></div>
+    <slot></slot>
   </button>
 </template>
 
@@ -22,15 +19,15 @@
 import { ref } from 'vue';
 
 interface IProps {
-  layout?: 'primary' | 'secondary';
   type?: 'button' | 'submit';
   isDisabled?: boolean;
+  variant?: 'primary' | 'secondary';
 }
 
 const props = withDefaults(defineProps<IProps>(), {
-  layout: 'primary',
   type: 'button',
   isDisabled: false,
+  variant: 'primary',
 });
 
 const isPressed = ref(false);
@@ -44,62 +41,86 @@ const handleRelease = () => {
 };
 </script>
 
-<style module lang="scss">
+<style>
 .button {
-  position: relative;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-lg);
+  font-family: 'Luminari', 'Georgia', 'Times New Roman', serif;
+  font-weight: normal;
+  border: 2px solid;
+  cursor: pointer;
+  transition: none;
+  min-width: 120px;
+  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  min-width: 300px;
-  height: 50px;
-  padding: 0 24px;
-  font-family: 'Minecraft', monospace;
-  font-size: 20px;
-  font-weight: normal;
-  color: #fff;
-  text-shadow: 2px 2px 0 #3f3f3f;
-
-  background: #6b6b6b;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  image-rendering: pixelated;
-
-  transform: translateY(-4px);
-  transition: transform 0.07s ease;
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: translateY(-2px);
-  }
+  letter-spacing: 0.5px;
+  text-transform: none;
 }
 
-
-
-
-.pressed:not(:disabled) {
-  transform: translateY(-1px);
+.button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
 }
 
-.text {
-  position: relative;
-  z-index: 2;
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
+/* Primary variant - классический фиолетовый */
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary-active);
+}
 
-  border: 3px solid #000;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-bottom-color: #3a3a3a;
-  border-right-color: #3a3a3a;
+.button--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-active);
+}
+
+.button--primary:active:not(:disabled) {
+  background: var(--color-primary-active);
+}
+
+/* Secondary variant - классический синий */
+.button--secondary {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary-active);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--color-secondary-hover);
+  border-color: var(--color-secondary-active);
+}
+
+.button--secondary:active:not(:disabled) {
+  background: var(--color-secondary-active);
+}
+
+/* Outline variants - классические контурные */
+.button--outline-primary {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.button--outline-primary:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button--outline-secondary {
+  background: transparent;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.button--outline-secondary:hover:not(:disabled) {
+  background: var(--color-secondary);
+  color: var(--color-white);
 }
 </style>

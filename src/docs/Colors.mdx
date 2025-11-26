@@ -2,37 +2,103 @@ import { ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 # Colors
 
+Цветовая палитра разработана для единого стиля компонентов библиотеки, предназначенной для использования в проекте Калькулятора подсетей. Палитра основана на стандартных веб-цветах для обеспечения профессионального и современного вида.
+
 <ColorPalette>
 
 <ColorItem
-  title='Primary'
+  title='Primary (Основной синий)'
   colors={{
-    '--color-primary': '#006cbb',
+    '--color-primary': '#007bff',
+    '--color-primary-hover': '#0056b3',
+    '--color-primary-active': '#004085',
   }}
 />
 
 <ColorItem
-  title='Monochrome'
+  title='Secondary (Вторичный серый)'
+  colors={{
+    '--color-secondary': '#6c757d',
+    '--color-secondary-hover': '#5a6268',
+    '--color-secondary-active': '#545b62',
+  }}
+/>
+
+<ColorItem
+  title='Success (Успех)'
+  colors={{
+    '--color-success': '#28a745',
+    '--color-success-hover': '#1e7e34',
+  }}
+/>
+
+<ColorItem
+  title='Error (Ошибка)'
+  colors={{
+    '--color-error': '#dc3545',
+    '--color-error-hover': '#bd2130',
+  }}
+/>
+
+<ColorItem
+  title='Warning (Предупреждение)'
+  colors={{
+    '--color-warning': '#ffc107',
+    '--color-warning-hover': '#e0a800',
+  }}
+/>
+
+<ColorItem
+  title='Info (Информация)'
+  colors={{
+    '--color-info': '#17a2b8',
+    '--color-info-hover': '#138496',
+  }}
+/>
+
+<ColorItem
+  title='Monochrome (Серые тона)'
   colors={{
     '--color-white': '#ffffff',
-    '--color-gray-light': '#eeeeee',
-    '--color-gray': '#cccccc',
-    '--color-gray-dark': '#777777',
+    '--color-gray-100': '#f8f9fa',
+    '--color-gray-200': '#e9ecef',
+    '--color-gray-300': '#dee2e6',
+    '--color-gray-400': '#ced4da',
+    '--color-gray-500': '#adb5bd',
+    '--color-gray-600': '#6c757d',
+    '--color-gray-700': '#495057',
+    '--color-gray-800': '#343a40',
+    '--color-gray-900': '#212529',
     '--color-black': '#000000',
   }}
 />
 
 <ColorItem
-  title='Success'
+  title='Light & Dark (Светлый/Темный)'
   colors={{
-    '--color-success': '#01bd78',
+    '--color-light': '#f8f9fa',
+    '--color-light-hover': '#e2e6ea',
+    '--color-dark': '#343a40',
+    '--color-dark-hover': '#23272b',
   }}
 />
 
 <ColorItem
-    title='Error'
-    colors={{
-      '--color-error': '#d40019',
-    }}
+  title='Special Subnet Colors (Специальные цвета для подсетей)'
+  subtitle='Предназначены для подсветки сетевых элементов'
+  colors={{
+    '--color-subnet-primary': '#007bff',
+    '--color-subnet-secondary': '#6c757d',
+    '--color-subnet-highlight': '#17a2b8',
+    '--color-subnet-foreground': '#212529',
+    '--color-subnet-background': '#f8f9fa',
+    '--color-subnet-border': '#dee2e6',
+  }}
 />
+
 </ColorPalette>
+
+## Примечания
+
+- Все цвета соответствуют стандартам Bootstrap для консолидации с современными веб-приложениями
+- Hover и active состояния предусмотрены для интерактивных элементов

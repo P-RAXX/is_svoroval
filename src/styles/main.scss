@@ -1,5 +1,15 @@
 @use 'colors';
 
+/* Minecraft шрифт */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('https://fonts.cdnfonts.com/s/13667/Minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Фолбэк шрифты */
 @font-face {
   font-family: 'base';
   font-weight: 400;
@@ -20,7 +30,7 @@
 
   &::selection {
     color: var(--color-white);
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
   }
 }
 
@@ -29,6 +39,7 @@ body {
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
+  background: #6B6B6B; /* Minecraft-like background */
 }
 
 a {
@@ -52,4 +63,10 @@ p {
 
 p + p {
   margin: 12px 0;
+}
+
+/* Дополнительные Minecraft стили */
+.minecraft-text {
+  font-family: 'Minecraft', monospace;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
